@@ -1,4 +1,4 @@
-#!/home/juancruzct/Documentos/UTN/PROG3/numberconversion/venv/bin/python3
+#!/home/facu25fm/Escritorio/FrontendFM/tp_integrador1/tp_integrador1/venv/bin/python3
 # -*- coding: utf-8 -*-
 import re
 import sys
