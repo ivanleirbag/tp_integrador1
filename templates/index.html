@@ -2,33 +2,15 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Conversor de Números</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <title>Proyecto Integrador</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
-    <div class="container">
-        <div class="panel input-panel">
-            <h2>Ingresá un número</h2>
-            <form method="POST" id="convert-form">
-                <input type="text" name="number" placeholder="Ej: 123">
-                <button type="submit" class="invisible-submit"></button>
-            </form>
-        </div>
+    <h1>Proyecto Integrador</h1>
 
-        <div class="convert-button">
-            <button type="submit" form="convert-form">
-                <img src="{{ url_for('static', filename='change.png') }}" alt="Convertir">
-            </button>
-        </div>
-
-        <div class="panel result-panel">
-            <h2>Resultado</h2>
-            {% if result %}
-                <p>{{ result }}</p>
-            {% else %}
-                <p>Esperando número...</p>
-            {% endif %}
-        </div>
+    <div class="options">
+        <a href="/number" class="box">Conversión de Números</a>
+        <a href="/weather" class="box">Clima</a>
     </div>
 </body>
 </html>
