@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Clima por Ciudad</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='/css/weather_style.css') }}">
+</head>
+<body>
+    <h1>Consulta del Clima</h1>
+    <form action="/weather" method="POST">
+        <input type="text" id="cityInput" name="city" placeholder="Buscar ciudad..." required>
+        <div id="suggestions" style="border: 1px solid #ccc; display: none; position: absolute; background: white; z-index: 1000;"></div>
+        <button type="submit">Buscar clima</button>
+    </form>
+
+    <div id="map"></div>
+
+    {% if error %}
+        <p style="color:red;">{{ error }}</p>
+    {% elif weather %}
+        <div class="weather-info">
+            <h3>{{ weather.city }}</h3>
+            <p>Temperatura: {{ weather.temp }} °C</p>
+            <p>Sensación térmica: {{ weather.feels_like }} °C</p>
+            <p>Clima: {{ weather.description }}</p>
+            <p>Mínima: {{ weather.temp_min }} °C</p>
+            <p>Máxima: {{ weather.temp_max }} °C</p>
+            <p>Humedad: {{ weather.humidity }}%</p>
+        </div>
+    {% endif %}
+
+    <script src="{{ url_for('static', filename='scripts/map.js') }}"></script>
+    <script src="{{ url_for('static', filename='scripts/autocomplete.js') }}"></script>
+</body>
+</html>
