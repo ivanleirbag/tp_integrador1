@@ -1,5 +1,6 @@
 import requests
 import os
+import sys
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -45,10 +46,15 @@ def get_weather(lat, lon):
         response = requests.get(url, params=params)
         response.raise_for_status()
         data = response.json()
+        #print(data, file=sys.stderr)
         weather_info = {
             "city": data["name"],
-            "temp": round(data["main"]["temp"], 1),
-            "description": data["weather"][0]["description"]
+            "temp": data["main"]["temp"],
+            "description": data["weather"][0]["description"],
+            "feels_like": data["main"]["feels_like"],
+            "temp_min": data["main"]["temp_min"],
+            "temp_max": data["main"]["temp_max"],
+            "humidity": data["main"]["humidity"]
         }
         return weather_info, None
     

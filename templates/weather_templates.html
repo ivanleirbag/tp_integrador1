@@ -5,16 +5,13 @@
     <title>Clima por Ciudad</title>
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
     <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-    <style>
-        #map { height: 400px; width: 100%; margin-top: 10px; }
-        body { font-family: sans-serif; padding: 20px; }
-        .weather-info { margin-top: 20px; }
-    </style>
+    <link rel="stylesheet" href="{{ url_for('static', filename='/css/weather_style.css') }}">
 </head>
 <body>
     <h1>Consulta del Clima</h1>
     <form action="/weather" method="POST">
         <input type="text" id="cityInput" name="city" placeholder="Buscar ciudad..." required>
+        <div id="suggestions" style="border: 1px solid #ccc; display: none; position: absolute; background: white; z-index: 1000;"></div>
         <button type="submit">Buscar clima</button>
     </form>
 
@@ -24,43 +21,17 @@
         <p style="color:red;">{{ error }}</p>
     {% elif weather %}
         <div class="weather-info">
-            <h3>Ciudad: {{ weather.city }}</h3>
+            <h3>{{ weather.city }}</h3>
             <p>Temperatura: {{ weather.temp }} °C</p>
+            <p>Sensación térmica: {{ weather.feels_like }} °C</p>
             <p>Clima: {{ weather.description }}</p>
+            <p>Mínima: {{ weather.temp_min }} °C</p>
+            <p>Máxima: {{ weather.temp_max }} °C</p>
+            <p>Humedad: {{ weather.humidity }}%</p>
         </div>
     {% endif %}
 
-    <script>
-        const map = L.map('map').setView([-34.6037, -58.3816], 5); // Centrado en Argentina inicialmente
-
-        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            attribution: '© OpenStreetMap contributors'
-        }).addTo(map);
-
-        // Manejamos el click en el mapa
-        let marker;
-        map.on('click', function(e) {
-            const { lat, lng } = e.latlng;
-            if (marker) marker.setLatLng(e.latlng);
-            else marker = L.marker(e.latlng).addTo(map);
-
-            fetch(`https://nominatim.openstreetmap.org/reverse?lat=${lat}&lon=${lng}&format=json`)
-                .then(res => res.json())
-                .then(data => {
-                    console.log(data)
-                    const city = data.address.city || data.address.town || data.address.village;
-                    const state = data.address.state || "";
-                    const country = data.address.country;
-
-                    let query = "";
-
-                    if (city) query += `${city}, `;
-                    if (state) query += state;
-                    if (country) query += `, ${country}`;
-
-                    document.getElementById('cityInput').value = query;
-                });
-        });
-    </script>
+    <script src="{{ url_for('static', filename='scripts/map.js') }}"></script>
+    <script src="{{ url_for('static', filename='scripts/autocomplete.js') }}"></script>
 </body>
 </html>
