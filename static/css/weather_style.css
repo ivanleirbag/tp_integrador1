@@ -55,7 +55,7 @@ form {
     background-color: #e1f5fe;
 }
 
-button {
+.button {
     padding: 9px 10px;
     background-color: #ffffff;
     border: none;
@@ -66,7 +66,7 @@ button {
     transition: all 0.3s ease;
 }
 
-button:hover {
+.button:hover {
     color: #0f0f0f;
 }
 
@@ -89,6 +89,17 @@ button:hover {
     align-items: center;
     margin-bottom: 20px;
     margin-right: 10px;
+}
+
+.error {
+    background-color: #f8d7da; 
+    color: #721c24;            
+    border: 1px solid #f5c6cb; 
+    padding: 10px 15px;
+    border-radius: 6px;
+    font-weight: bold;
+    margin-top: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .details {
@@ -156,6 +167,7 @@ input::placeholder {
     overflow-y: auto;
     width: 70%;
     margin-top: 5px;
+    padding-left: 50px;
     box-shadow: 0 2px 8px rgba(0,0,0,0.1);
     display: none;
     z-index: 1000;
