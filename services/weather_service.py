@@ -42,19 +42,21 @@ def get_weather(lat, lon):
         "lang": "es"
     }
 
+
     try:
         response = requests.get(url, params=params)
         response.raise_for_status()
         data = response.json()
-        #print(data, file=sys.stderr)
+
         weather_info = {
             "city": data["name"],
-            "temp": data["main"]["temp"],
-            "description": data["weather"][0]["description"],
-            "feels_like": data["main"]["feels_like"],
-            "temp_min": data["main"]["temp_min"],
-            "temp_max": data["main"]["temp_max"],
-            "humidity": data["main"]["humidity"]
+            "temp": round(data["main"]["temp"]),  
+            "description": data["weather"][0]["description"].capitalize(),
+            "feels_like": round(data["main"]["feels_like"]),
+            "temp_min": round(data["main"]["temp_min"]),
+            "temp_max": round(data["main"]["temp_max"]),
+            "humidity": data["main"]["humidity"],
+            "icon": data["weather"][0]["icon"]  
         }
         return weather_info, None
     
