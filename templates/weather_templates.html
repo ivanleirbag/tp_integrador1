@@ -36,6 +36,11 @@
                     <p><strong>Máx:</strong> {{ weather.temp_max }}°C</p>
                 </div>
             </div>
+        {% elif error %}
+            <div class="error">
+                <h2>Parece que ocurrió un problema...</h2>
+                <p>{{error}}</p>
+            </div>
         {% endif %}
         <div id="map"></div>
     </div>
