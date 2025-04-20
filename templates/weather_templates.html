@@ -11,14 +11,17 @@
     <div class="container">
         <h1>Consulta del Clima</h1>
         <form action="/weather" method="POST">
-            <input type="text" id="cityInput" name="city" placeholder="Buscar ciudad..." required>
-            <div id="suggestions"></div>
-            <button type="submit">Buscar clima</button>
+            <div class="input-wrapper">
+                <input type="text" id="cityInput" name="city" placeholder="Buscar ciudad..." required>
+                <div id="suggestions"></div>
+                <button type="submit">Buscar clima</button>
+            </div>
         </form>
 
         {% if weather %}
             <div class="weather-card">
                 <div class="main-info">
+                    <h2><strong> {{ weather.city }}</strong></h2>
                     <img class="weather-icon" src="https://openweathermap.org/img/wn/{{ weather.icon }}@4x.png" alt="icono clima">
                     <div class="temp">
                         {{ weather.temp }}°C
@@ -32,11 +35,9 @@
                     <p><strong>Mín:</strong> {{ weather.temp_min }}°C</p>
                     <p><strong>Máx:</strong> {{ weather.temp_max }}°C</p>
                 </div>
-
-                
-                <div id="map"></div>
             </div>
         {% endif %}
+        <div id="map"></div>
     </div>
 
     <script src="{{ url_for('static', filename='scripts/map.js') }}"></script>
