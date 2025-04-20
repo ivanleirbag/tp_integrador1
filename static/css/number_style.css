@@ -1,7 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&display=swap');
+
 body {
     margin: 0;
-    font-family: 'Segoe UI', sans-serif;
-    background: linear-gradient(to right, #e0f7fa, #b2ebf2);
+    background: #ffffff;
+    background: linear-gradient(225deg, rgba(255, 255, 255, 1) 0%, rgb(235, 230, 255) 100%);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -15,10 +17,16 @@ body {
     align-items: center;
     width: 90%;
     max-width: 1000px;
-    background-color: rgba(255, 255, 255, 0.7);
+    background:  #5D3BD1;
+    background: linear-gradient(135deg, rgba(93, 59, 209, 1) 0%, rgba(42, 12, 138, 1) 100%);
     padding: 30px;
-    border-radius: 20px;
+    border-radius: 8px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.input-panel {
+    position: relative;
+    bottom: .56rem;
 }
 
 .panel {
@@ -28,19 +36,49 @@ body {
 
 .input-panel input[type="text"] {
     width: 80%;
+    height: 1.25rem;
     padding: 10px;
-    border: 2px solid #81d4fa;
+    border: 2px solid #5D3BD1;
     border-radius: 10px;
     font-size: 1.2rem;
     text-align: center;
 }
 
+.input-panel h2 {
+    color: #fff;
+    font-size: 2rem;
+    font-family: "Archivo", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+    font-variation-settings:
+      "wdth" 100;
+}
+
+.result-panel h2 {
+    color: #fff;
+    font-size: 2rem;
+    font-family: "Archivo", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+    font-variation-settings:
+      "wdth" 100;
+}
+
 .result-panel p {
-    font-size: 1.5rem;
-    color: #0277bd;
+    font-size: 1.25rem;
+    cursor: default;
+    color: #5D3BD1;
     padding: 10px;
     background-color: #e1f5fe;
     border-radius: 10px;
+    font-family: "Archivo", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+    font-variation-settings:
+      "wdth" 100;
 }
 
 .convert-button {
@@ -50,7 +88,7 @@ body {
 }
 
 .convert-button button {
-    background-color: #4fc3f7;
+    background-color: #ffffff;
     border: none;
     width: 80px;
     height: 80px;
@@ -61,7 +99,7 @@ body {
 }
 
 .convert-button button:hover {
-    transform: scale(1.1);
+    transform: scale(1.05);
 }
 
 .convert-button img {
@@ -73,3 +111,19 @@ body {
     display: none;
 }
 
+.home-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 10px 20px;
+    background-color: #5D3BD1;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-family: "Archivo", sans-serif;
+    transition: all 0.3s ease;
+}
+.home-button:hover {
+    background-color: #4526a3;
+    transform: scale(1.05);
+}

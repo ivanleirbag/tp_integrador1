@@ -1,6 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&display=swap');
+
 body {
     font-family: 'Arial', sans-serif;
-    background: #f1f9ff;
+    background: #ffffff;
+    background: linear-gradient(225deg, rgba(255, 255, 255, 1) 0%, rgb(235, 230, 255) 100%);
     margin: 0;
     padding: 0;
     display: flex;
@@ -15,10 +18,23 @@ body {
     padding: 20px;
     max-width: 600px;
     width: 100%;
-    background: white;
+    background:  #5D3BD1;
+    background: linear-gradient(135deg, rgba(93, 59, 209, 1) 0%, rgba(42, 12, 138, 1) 100%);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
+    border-radius: 5px;
 }
+
+.container h1 {
+    color: #f0f0f0;
+    font-family: "Archivo", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+    font-variation-settings:
+      "wdth" 100;
+      font-size: 3rem;
+}
+
 
 form {
     display: flex;
@@ -30,31 +46,34 @@ form {
 #cityInput {
     padding: 10px;
     font-size: 1rem;
-    border: 1px solid #ccc;
+    border: 1px solid #5D3BD1;
     border-radius: 4px;
-    width: 70%;
-    max-width: 400px;
-    margin-right: 10px;
+    height: .9rem;
+    width: 100%;
+    max-width: 450px;
+    margin-right: .5rem;
+    background-color: #e1f5fe;
 }
 
 button {
-    padding: 10px 20px;
-    background-color: #0288d1;
+    padding: 9px 10px;
+    background-color: #ffffff;
     border: none;
-    color: white;
+    color: #000000;
     font-size: 1rem;
     border-radius: 4px;
     cursor: pointer;
+    transition: all 0.3s ease;
 }
 
 button:hover {
-    background-color: #0277bd;
+    color: #0f0f0f;
 }
 
 .weather-card {
     margin-top: 20px;
     padding: 20px;
-    background: linear-gradient(135deg, #0974c0, #004b72); 
+    background: #5D3BD1; 
     border-radius: 8px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); 
     display: flex;
@@ -72,22 +91,13 @@ button:hover {
     margin-right: 10px;
 }
 
-.error {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 20px;
-    margin-right: 10px;
-    color: red;
-}
-
 .details {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     gap: 15px;
     font-size: 1rem;
     text-align: right;
-    margin-left: 10px;
+    margin-left: 4rem;
 }
 
 .weather-icon {
@@ -128,6 +138,14 @@ button:hover {
     position: relative;
     width: 100%; 
 }
+
+input::placeholder {
+    color: #000000;
+    font-size: 14px;
+    font-size: 1rem;
+}
+
+
 
 #suggestions {
     position: absolute;
@@ -174,3 +192,19 @@ button:hover {
     }
 }
 
+.home-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 10px 20px;
+    background-color: #5D3BD1;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-family: "Archivo", sans-serif;
+    transition: all 0.3s ease;
+}
+.home-button:hover {
+    background-color: #4526a3;
+    transform: scale(1.05);
+}
