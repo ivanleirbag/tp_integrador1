@@ -72,6 +72,15 @@ button:hover {
     margin-right: 10px;
 }
 
+.error {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+    margin-right: 10px;
+    color: red;
+}
+
 .details {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));

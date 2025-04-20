@@ -7,6 +7,7 @@ weather_bp = Blueprint("weather", __name__)
 def weather():
     if request.method == "POST":
         city_name = request.form.get("city")
+        
         if not city_name:
             return render_template("weather_templates.html", error="Debe ingresar una ciudad")
 
@@ -16,6 +17,7 @@ def weather():
 
         lat, lon = coords
         weather_data, weather_error = get_weather(lat, lon)
+
         if weather_error:
             return render_template("weather_templates.html", error=weather_error)
 
