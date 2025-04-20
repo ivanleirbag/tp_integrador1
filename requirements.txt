@@ -1,8 +1,6 @@
-<<<<<<< HEAD
 zeep==4.3.1
 Flask==3.1.0
-=======
-apt-clone==0.2.1
+#apt-clone==0.2.1
 apturl==0.5.2
 async-timeout==4.0.1
 beautifulsoup4==4.10.0
@@ -122,4 +120,3 @@ xkit==0.0.0
 xlrd==2.0.1
 yt-dlp==2022.4.8
 zipp==1.0.0
->>>>>>> bb36724c31058b907c8dfd5f21de18b8c72a965b
