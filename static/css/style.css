@@ -1,0 +1,328 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+    --card-height: 300px;
+    --card-width: calc(var(--card-height) / 1.5);
+  }
+*{
+    box-sizing: border-box;
+}
+body {
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #ffffff;
+    background: linear-gradient(225deg, rgba(255, 255, 255, 1) 0%, rgb(235, 230, 255) 100%);
+  }
+  .card {
+    width: var(--card-width);
+    height: var(--card-height);
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    padding: 0 36px;
+    perspective: 2500px;
+    margin: 0 50px;
+  }
+.cover-image{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+}
+
+.li--text {
+    text-decoration: none;
+    list-style: none;
+    color: #f7f7f7;
+}
+
+.li--text h2 {
+    font-size: 2rem;
+    position: absolute;
+    translate: -40% -600%;
+    font-family: "Archivo", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+    font-variation-settings:
+      "wdth" 100;
+    text-shadow: 10px 20px 12px rgb(18, 1, 73, 1);
+}
+
+.li--text dotlottie-player {
+    position: absolute;
+    translate: -50% -200%;
+    background: transparent;
+}
+.wrapper{
+    background:  #5D3BD1;
+    background: linear-gradient(135deg, rgba(93, 59, 209, 1) 0%, rgba(42, 12, 138, 1) 100%);
+    transition: all 0.5s;
+    position: absolute;
+    width: 100%;
+    height: 100%; 
+    z-index: -1;
+}
+
+.wrapper h2 {
+    color: #fff;
+    font-size: 2rem;
+    font-family: "Archivo", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+    font-variation-settings:
+      "wdth" 100;
+    text-shadow: 10px 20px 12px rgb(18, 1, 73, 1);
+}
+
+/* text 1 */
+.number--weather {
+    position: absolute;
+    translate: 140% 200%;
+}
+
+.number--1--weather {
+    margin-top: -30px;
+    position: absolute;
+    translate: 50% 450%;
+}
+
+.number--weather,
+.number--1--weather {
+  position: absolute;
+  transition: opacity 0.5s ease;
+  color: #00796b;
+  font-size: 2rem;
+}
+
+/* Posicionamientos personalizados (ajustá si querés) */
+.number--weather {
+  translate: 140% 200%;
+}
+
+.number--1--weather {
+  margin-top: -30px;
+  translate: 50% 450%;
+}
+
+/* Efecto al pasar el mouse por encima del enlace */
+a:hover .number--weather,
+a:hover .number--1--weather {
+  opacity: 0;
+}
+
+/* text 2 */
+.number,
+.number--1 {
+  position: absolute;
+  transition: opacity 0.5s ease;
+  color: #00796b;
+  font-size: 2rem;
+}
+
+a:hover .number,
+a:hover .number--1 {
+  opacity: 0;
+}
+
+.number {
+    position: absolute;
+    translate: 140% 200%;
+}
+
+.number--1 {
+    margin-top: -30px;
+    position: absolute;
+    translate: 60% 450%;
+}
+
+.card:hover .wrapper{
+    transform: perspective(900px) translateY(-5%) rotateX(25deg) translateZ(0);
+    box-shadow: 2px 35px 32px -8px rgba(36, 36, 36, 0.75);
+    -webkit-box-shadow:2px 35px 32px -8px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow:2px 35px 32px -8px rgba(0, 0, 0, 0.75);
+}
+.wrapper::before,
+.wrapper::after{
+    content: "";
+    opacity: 0;
+    width: 100%;
+    height: 80px;
+    transition: all 0.5s;
+    position: absolute;
+    left: 0;
+}
+.wrapper::before{
+    top: 0;
+    height: 100%;
+    background-image: linear-gradient(
+        to top,
+        transparent 46%,
+        rgb(45, 12, 153)68%,
+        rgb(45, 12, 153) 97%
+    );
+}
+.wrapper::after{
+    bottom: 0;
+    opacity: 1;
+    background-image: linear-gradient(
+        to bottom,
+        transparent 46%,
+        rgb(39, 7, 143) 68%,
+        rgb(39, 7, 143)97%
+    );
+}
+.card:hover .wrapper::before,
+.wrapper::after{
+    opacity: 1;
+}
+.card:hover .wrapper::after{
+    height: 120px;
+}
+.title {
+    width: 100%;
+    color: #fff;
+    text-decoration: none;
+    transition: transform 0.5s;
+  }
+
+
+.card:hover .title {
+transform: translate3d(0%, -50px, 100px);
+}
+.character {
+    width: 100%;
+    opacity: 0;
+    transition: all 0.5s;
+    position: absolute;
+    z-index: -1;
+}
+.character--sub {
+    width: 100%;
+    transition: all 0.5s;
+    opacity: 0;
+    position: absolute;
+    color: #fff;
+    z-index: -1;
+    font-size: 2rem;
+    position: absolute;
+    translate: 15% -330%;
+    font-family: "Archivo", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+}
+
+.card:hover .character--sub {
+    opacity: 1;
+    transform: translate3d(0%, 20%, 100px);
+}
+
+.card:hover .character {
+    opacity: 1;
+    transform: translate3d(0%, 20%, 100px);
+}
+
+.character--sub--1 {
+    width: 100%;
+    opacity: 0;
+    transition: all 0.5s;
+    position: absolute;
+    z-index: -1;
+    }
+.card:hover .character--sub--1 {
+    opacity: 1;
+    transform: translate( -20%, -50%);
+
+}
+
+.character--1 {
+    width: 100%;
+    opacity: 0;
+    transition: all 0.5s;
+    position: absolute;
+    z-index: -1;
+    }
+.card:hover .character--1 {
+    opacity: 1;
+    transform: translate( 80%, -270%);
+}
+.character--2 {
+    width: 100%;
+    opacity: 0;
+    transition: all 0.5s;
+    position: absolute;
+    z-index: -1;
+    }
+.card:hover .character--2 {
+    opacity: 1;
+    transform: translate( -115%, -300%);
+}
+
+/* efectos para las box de colores */
+
+.box-dad {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+
+.box--color{
+    width: 600px;
+    height: 300px;
+    background-color: #5D3BD1;
+    filter: blur(250px);
+    border-radius: 50%;
+    position: relative;
+    translate: 50% -100%;
+    top: 0;
+
+}
+
+.box--color--1 {
+    width: 300px;
+    height: 300px;
+    background-color: #5D3BD1;
+    filter: blur(250px);
+    border-radius: 50%;
+    position: relative;
+    translate: 350% 210%;
+    top: 0;
+}
+
+h1 {
+    margin-bottom: 50px;
+}
+
+.options {
+    display: flex;
+    gap: 50px;
+}
+
+.box {
+    width: 250px;
+    height: 150px;
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+    text-decoration: none;
+    color: #333;
+    font-size: 20px;
+}
+
+.box:hover {
+    transform: scale(1.05);
+    background-color: #e3f2fd;
+}

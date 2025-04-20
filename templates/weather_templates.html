@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Clima por Ciudad</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/weather_style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Consulta del Clima</h1>
+        <form action="/weather" method="POST">
+            <div class="input-wrapper">
+                <input type="text" id="cityInput" name="city" placeholder="Buscar ciudad..." required>
+                <div id="suggestions"></div>
+                <button type="submit">Buscar clima</button>
+            </div>
+        </form>
+
+        {% if weather %}
+            <div class="weather-card">
+                <div class="main-info">
+                    <h2><strong> {{ weather.city }}</strong></h2>
+                    <img class="weather-icon" src="https://openweathermap.org/img/wn/{{ weather.icon }}@4x.png" alt="icono clima">
+                    <div class="temp">
+                        {{ weather.temp }}°C
+                    </div>
+                    <div class="description">{{ weather.description }}</div>
+                </div>
+
+                <div class="details">
+                    <p><strong>Sensación:</strong> {{ weather.feels_like }}°C</p>
+                    <p><strong>Humedad:</strong> {{ weather.humidity }}%</p>
+                    <p><strong>Mín:</strong> {{ weather.temp_min }}°C</p>
+                    <p><strong>Máx:</strong> {{ weather.temp_max }}°C</p>
+                </div>
+            </div>
+        {% endif %}
+        <div id="map"></div>
+    </div>
+
+    <a href="/" class="home-button">Volver al inicio</a>
+
+    <script src="{{ url_for('static', filename='scripts/map.js') }}"></script>
+    <script src="{{ url_for('static', filename='scripts/autocomplete.js') }}"></script>
+</body>
+</html>
+

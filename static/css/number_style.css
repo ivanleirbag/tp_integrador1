@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&display=swap');
+
+body {
+    margin: 0;
+    background: #ffffff;
+    background: linear-gradient(225deg, rgba(255, 255, 255, 1) 0%, rgb(235, 230, 255) 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+
+.container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 90%;
+    max-width: 1000px;
+    background:  #5D3BD1;
+    background: linear-gradient(135deg, rgba(93, 59, 209, 1) 0%, rgba(42, 12, 138, 1) 100%);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.input-panel {
+    position: relative;
+    bottom: .56rem;
+}
+
+.panel {
+    width: 35%;
+    text-align: center;
+}
+
+.input-panel input[type="text"] {
+    width: 80%;
+    height: 1.25rem;
+    padding: 10px;
+    border: 2px solid #5D3BD1;
+    border-radius: 10px;
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+.input-panel h2 {
+    color: #fff;
+    font-size: 2rem;
+    font-family: "Archivo", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+    font-variation-settings:
+      "wdth" 100;
+}
+
+.result-panel h2 {
+    color: #fff;
+    font-size: 2rem;
+    font-family: "Archivo", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+    font-variation-settings:
+      "wdth" 100;
+}
+
+.result-panel p {
+    font-size: 1.25rem;
+    cursor: default;
+    color: #5D3BD1;
+    padding: 10px;
+    background-color: #e1f5fe;
+    border-radius: 10px;
+    font-family: "Archivo", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+    font-variation-settings:
+      "wdth" 100;
+}
+
+.convert-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.convert-button button {
+    background-color: #ffffff;
+    border: none;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.convert-button button:hover {
+    transform: scale(1.05);
+}
+
+.convert-button img {
+    width: 40px;
+    height: 40px;
+}
+
+.invisible-submit {
+    display: none;
+}
+
+.home-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 10px 20px;
+    background-color: #5D3BD1;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-family: "Archivo", sans-serif;
+    transition: all 0.3s ease;
+}
+.home-button:hover {
+    background-color: #4526a3;
+    transform: scale(1.05);
+}
