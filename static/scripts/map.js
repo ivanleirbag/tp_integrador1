@@ -5,7 +5,12 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 }).addTo(map);
 
 let marker;
+
 map.on('click', function (e) {
+    /**
+     * @brief Handles click events on the map to place a marker and fetch location info.
+     * @param {Object} e - The Leaflet event object containing click coordinates.
+     */
     const { lat, lng } = e.latlng;
     if (marker) marker.setLatLng(e.latlng);
     else marker = L.marker(e.latlng).addTo(map);
